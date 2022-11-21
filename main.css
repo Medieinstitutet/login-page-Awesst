@@ -1,0 +1,61 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Oswald", sans-serif;
+}
+.firstPage {
+  width: 100%;
+  height: 96vh;
+  background-color: orange;
+}
+.headLogo {
+  width: 75vh;
+  height: 75vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  height: 4vh;
+}
+li {
+  float: left;
+}
+li a {
+  position: relative;
+  color: rgb(35, 201, 223);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+}
+li a:hover {
+  background-color: orange;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  margin-top: -100px;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.secondPage {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+}
+.thirdPage {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(95, 95, 255);
+}
