@@ -15,36 +15,40 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <header>
+    <header id="header">
       <nav>
         <ul class="navigation">
           <li><a href="#hem">Home</a></li>
           <li><a href="#About Us">About Us</a></li>
           <li><a href="#Products">Products</a></li>
-          <li><a href="#Login">Login</a></li>
+          <li id="login"><a href="#Login">Login</a></li>
+          <li id="logout"><a href="#logout">Log Out</a></li>
         </ul>
       </nav>
     </header>
     <section class="firstPage">
       <img class="headLogo" src="img/petziliannocircle.png" alt="LogoType" />
-      <div class="login">
+      <div id="loginForm">
         <form>
           <label for="userName">Username</label><br />
-          <input type="text" id="userName" /><br />
+          <input placeholder="Username" type="text" id="userName" /><br />
           <label for="passWord">Password</label><br />
-          <input type="password" id="passWord" />
+          <input placeholder="Password" type="password" id="passWord" /><br />
         </form>
-        <button id="submitBtn">Log In</button>
+        <br />
+        <button type="button" id="submitBtn">Log In</button><br />
       </div>
       <footer>
-        <img class="facebook" src="img/facebookicon.png" />
-        <img class="instagram" src="/img/instagramicon.png" />
-        <img class="twitter" src="img/twittericon.png" />
-        <img class="youtube" src="img/youtubeicon.png" />
+        <div id="socialmedia">
+          <img class="facebook" src="img/facebookicon.png" />
+          <img class="instagram" src="/img/instagramicon.png" />
+          <img class="twitter" src="img/twittericon.png" />
+          <img class="youtube" src="img/youtubeicon.png" />
+        </div>
       </footer>
     </section>
-    <section class="secondPage"></section>
-    <section class="thirdPage"></section>
+    <section id="secondPage"></section>
+    <section id="thirdPage"></section>
     <script src="script.js"></script>
   </body>
 </html>
