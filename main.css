@@ -57,7 +57,6 @@ footer {
 #socialmedia {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
 }
 #aboutUs {
   width: 100%;
@@ -72,16 +71,52 @@ footer {
   display: none;
 }
 #loginForm {
-  display: flex;
+  position: absolute;
+  top: 35%;
+  left: 39%;
+  transform: translate(-50% -50%) scale(1.25);
   padding: 10px;
-  margin-left: 870px;
-  margin-top: -150px;
   display: none;
   flex-direction: column;
-  width: 140px;
-  font-size: 1rem;
+  width: 25rem;
+  height: 25rem;
+  font-size: 2rem;
   text-align: center;
+  background-color: rgb(211, 142, 15);
+  opacity: 97%;
+  border-radius: 10px;
 }
 #logout {
   display: none;
+}
+button {
+  background-color: rgb(112, 73, 0);
+  border: none;
+  outline: none;
+  margin: 10px;
+  border-radius: 50px;
+  height: 40px;
+  font-size: 25px;
+  cursor: pointer;
+}
+#esc {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 30px;
+  cursor: pointer;
+}
+input {
+  font-size: 25px;
+}
+#error-msg {
+  color: brown;
+}
+#headline {
+  color: black;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+  text-transform: uppercase;
 }

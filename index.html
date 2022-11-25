@@ -27,17 +27,30 @@
       </nav>
     </header>
     <section class="firstPage">
+      <h1 id="headline"></h1>
       <img class="headLogo" src="img/petziliannocircle.png" alt="LogoType" />
       <div id="loginForm">
         <form>
+          <p id="error-msg"></p>
           <label for="userName">Username</label><br />
-          <input placeholder="Username" type="text" id="userName" /><br />
+          <input
+            required
+            placeholder="Username"
+            type="text"
+            id="userName"
+          /><br />
           <label for="passWord">Password</label><br />
-          <input placeholder="Password" type="password" id="passWord" /><br />
+          <input
+            required
+            placeholder="Password"
+            type="password"
+            id="passWord"
+          /><br />
         </form>
         <br />
         <button type="button" id="submitBtn">Log In</button><br />
-        <button type="button" id="register">Register</button>
+        <button type="button" id="registerBtn">Register</button>
+        <div id="esc">&times;</div>
       </div>
       <footer>
         <div id="socialmedia">
