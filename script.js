@@ -46,8 +46,7 @@ let esc = document.getElementById("esc").addEventListener("click", () => {
 
 registerBtn.addEventListener("click", () => {
   users.push({ userName: userName.value, passWord: passWord.value });
-  // localStorage.setItem("users", JSON.stringify(users));
-  // console.log(JSON.parse(localStorage.getItem("users")));
+  localStorage.setItem("users", JSON.stringify(users));
   console.log("click");
   console.log(users);
 });
