@@ -21,12 +21,15 @@ const users = [
 // localStorage.setItem(users);
 // Eventlisteners
 submitBtn.addEventListener("click", () => {
-  let user = users.find(
+  const users = JSON.parse(localStorage.getItem("users"));
+  console.log(users);
+  const foundUser = users.find(
     (user) =>
       user.userName === userName.value && user.passWord === passWord.value
   );
-  if (user) {
-    localStorage.setItem("userLoggedIn", user.userName);
+  console.log(foundUser);
+  if (foundUser) {
+    localStorage.setItem("userLoggedIn", foundUser.userName);
     loginUser();
   } else {
     errorMsg.innerHTML = "Invalid Login.";
