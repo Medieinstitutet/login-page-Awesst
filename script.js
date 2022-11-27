@@ -46,18 +46,19 @@ let esc = document.getElementById("esc").addEventListener("click", () => {
   loginForm.style.display = "none";
   errorMsg.style.display = "none";
   registerBtn.style.display = "none";
-  congratz.style.display = "none";
 });
 
 registerBtn.addEventListener("click", () => {
   users.push({ userName: userName.value, passWord: passWord.value });
   localStorage.setItem("users", JSON.stringify(users));
   registerBtn.style.display = "none";
-  congratz.innerHTML = `Welcome & Enjoy your stay! ${userName.value}`;
+  errorMsg.style.display = "none";
+  submitBtn.style.display = "block";
 });
 
 registerForm.addEventListener("click", () => {
   registerBtn.style.display = "block";
+  submitBtn.style.display = "none";
 });
 
 // Functions
@@ -71,7 +72,6 @@ const loginUser = () => {
   headline.style.display = "flex";
   let userLoggedIn = localStorage.getItem("userLoggedIn");
   headline.innerHTML = `Welcome ${userLoggedIn}`;
-  registerBtn.style.display = "none";
 };
 
 const logOutUser = () => {
@@ -83,8 +83,6 @@ const logOutUser = () => {
   localStorage.removeItem("userLoggedIn");
   errorMsg.style.display = "none";
   headline.style.display = "none";
-  registerBtn.style.display = "none";
-  congratz.style.display = "none";
 };
 
 const isUserLoggedIn = () => {
