@@ -10,24 +10,24 @@ const passWord = document.getElementById("passWord");
 let registerBtn = document.getElementById("registerBtn");
 let errorMsg = document.getElementById("error-msg");
 let headline = document.getElementById("headline");
+let registerForm = document.getElementById("registerForm");
+let congratz = document.getElementById("congratz");
 
 const users = [
   { userName: "janne", passWord: "test" },
   { userName: "jakob", passWord: "dahlberg" },
 ];
 
-// localStorage.setItem("users", JSON.stringify(users));
-
-// localStorage.setItem(users);
+if (!localStorage.getItem("users")) {
+  localStorage.setItem("users", JSON.stringify(users));
+}
 // Eventlisteners
 submitBtn.addEventListener("click", () => {
   const users = JSON.parse(localStorage.getItem("users"));
-  console.log(users);
   const foundUser = users.find(
     (user) =>
       user.userName === userName.value && user.passWord === passWord.value
   );
-  console.log(foundUser);
   if (foundUser) {
     localStorage.setItem("userLoggedIn", foundUser.userName);
     loginUser();
@@ -45,13 +45,19 @@ logout.addEventListener("click", () => {
 let esc = document.getElementById("esc").addEventListener("click", () => {
   loginForm.style.display = "none";
   errorMsg.style.display = "none";
+  registerBtn.style.display = "none";
+  congratz.style.display = "none";
 });
 
 registerBtn.addEventListener("click", () => {
   users.push({ userName: userName.value, passWord: passWord.value });
   localStorage.setItem("users", JSON.stringify(users));
-  console.log("click");
-  console.log(users);
+  registerBtn.style.display = "none";
+  congratz.innerHTML = `Welcome & Enjoy your stay! ${userName.value}`;
+});
+
+registerForm.addEventListener("click", () => {
+  registerBtn.style.display = "block";
 });
 
 // Functions
@@ -65,6 +71,7 @@ const loginUser = () => {
   headline.style.display = "flex";
   let userLoggedIn = localStorage.getItem("userLoggedIn");
   headline.innerHTML = `Welcome ${userLoggedIn}`;
+  registerBtn.style.display = "none";
 };
 
 const logOutUser = () => {
@@ -76,6 +83,8 @@ const logOutUser = () => {
   localStorage.removeItem("userLoggedIn");
   errorMsg.style.display = "none";
   headline.style.display = "none";
+  registerBtn.style.display = "none";
+  congratz.style.display = "none";
 };
 
 const isUserLoggedIn = () => {
@@ -104,14 +113,6 @@ checkIfLoggedIn();
 //   } else {
 //     return false;
 //   }
-// };
-
-// const register = () => {
-//   aboutUs.style.display = "block";
-//   products.style.display = "block";
-//   login.style.display = "none";
-//   logout.style.display = "block";
-//   loginForm.style.display = "none";
 // };
 
 //  STICKY HEADER
