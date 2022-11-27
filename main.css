@@ -72,7 +72,7 @@ footer {
 }
 #loginForm {
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 39%;
   transform: translate(-50% -50%) scale(1.25);
   padding: 10px;
